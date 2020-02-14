@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using DatingApp.API.Data;
+using DatingApp.API.Models.Data;
 using Microsoft.EntityFrameworkCore;
 
 
