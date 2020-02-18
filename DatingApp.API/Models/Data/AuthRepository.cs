@@ -26,7 +26,7 @@ namespace DatingApp.API.Models.Data
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
             user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
+            user.Salt = passwordSalt;
 
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();  
@@ -38,7 +38,7 @@ namespace DatingApp.API.Models.Data
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
             if(user == null)
                 return null;
-            if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+            if(!VerifyPasswordHash(password, user.PasswordHash, user.Salt))
                 return null;
             
             return user;
