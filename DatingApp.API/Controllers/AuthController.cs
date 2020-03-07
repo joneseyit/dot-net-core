@@ -12,7 +12,7 @@ using System.Linq;
 namespace DatingApp.API.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    // [ApiController]
     public class AuthController : ControllerBase
     {
         private readonly IAuthRepository _repo;
